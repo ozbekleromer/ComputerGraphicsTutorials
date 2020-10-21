@@ -12,6 +12,10 @@
         createCanvas(800, 600);
         background(color(157, 215, 239));
         
+        noLoop();
+      }
+
+      function draw() {
         //noprotect
         //Draw Roof
         for (y = 50, w = 0; y < 200; y++, w += 2) {
@@ -34,7 +38,7 @@
           }
         }
 	
-  			//Draw Grass
+  	//Draw Flowers
         for (i = 0; i < 1000; i++) {
           x = floor(random(0, width));	
           y = floor(random(400,height));
@@ -46,12 +50,6 @@
         }
         updatePixels();
       }
-
-      function draw() {
-        
-      }
-
     </script>
   </body>
-
 </html>
