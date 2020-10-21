@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Title of the document</title>
+  </head>
+
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+    <script>
+      function setup() {
+        createCanvas(800, 600);
+        background(color(157, 215, 239));
+        
+        //noprotect
+        //Draw Roof
+        for (y = 50, w = 0; y < 200; y++, w += 2) {
+          for (x = width / 2 - w; x <= width / 2 + w; x++) {
+            set(x, y, color(235, 164, 135));
+          }
+        }
+
+        //Draw Wall
+        for (y = 200; y < 400; y++) {
+          for (x = 200; x <= 600; x++) {
+            set(x, y, color(235, 135, 156));
+          }
+        }
+        
+        //Draw Grass
+        for (y = 400; y <= height; y++) {
+          for (x = 0; x <= width; x++) {
+            set(x, y, color(135,235,164));
+          }
+        }
+	
+  			//Draw Grass
+        for (i = 0; i < 1000; i++) {
+          x = floor(random(0, width));	
+          y = floor(random(400,height));
+          
+          r = floor(random(0,255));
+          g = floor(random(0,255));
+          b = floor(random(0,255));
+        	set(x, y, color(r,g,b));
+        }
+        updatePixels();
+      }
+
+      function draw() {
+        
+      }
+
+    </script>
+  </body>
+
+</html>
