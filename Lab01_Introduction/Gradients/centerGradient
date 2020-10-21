@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>Title of the document</title>
   </head>
@@ -11,6 +10,8 @@
       function setup() {
         createCanvas(800, 600);
         background(0);
+        
+        noLoop();
       }
 
       function draw() {
@@ -30,8 +31,6 @@
         }
         updatePixels();
       }
-
     </script>
   </body>
-
 </html>
