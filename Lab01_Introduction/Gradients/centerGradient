@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Title of the document</title>
+  </head>
+
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+    <script>
+      function setup() {
+        createCanvas(800, 600);
+        background(0);
+      }
+
+      function draw() {
+        //noprotect
+        for (let y = 0; y < height; y++) {
+          for (let x = 0; x < width; x++) {
+            let dx = width / 2 - x;
+            let dy = height / 2 - y;
+            let d = sqrt(dx * dx + dy * dy);
+            let dMax = sqrt(height * height / 4);
+
+            let red = 256 - 256 * d / dMax;
+            let green = 256 * d / dMax;
+            let blue = 256 * ((x + y) / (width + height));
+            set(x, y, color(red, green, blue));
+          }
+        }
+        updatePixels();
+      }
+
+    </script>
+  </body>
+
+</html>
