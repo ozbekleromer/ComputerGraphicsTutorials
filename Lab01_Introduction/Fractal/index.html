@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Title of the document</title>
+  </head>
+
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+    <script>
+      function setup() {
+        createCanvas(800, 600);
+
+        x1 = floor(random(0, width));
+        y1 = floor(random(0, height));
+        x2 = floor(random(0, width));
+        y2 = floor(random(0, height));
+        x3 = floor(random(0, width));
+        y3 = floor(random(0, height));
+
+        noLoop();
+      }
+
+      function draw() {
+        //noprotect
+        background(color(0));
+
+        set(x1, y1, color(255));
+        set(x2, y2, color(255));
+        set(x3, y3, color(255));
+
+        cx = x1;
+        cy = y1;
+
+        for (i = 0; i < 30000; i++) {
+          val = floor(random(0, 3));
+
+          switch (val) {
+            case 0:
+              cx = (cx + x1) / 2;
+              cy = (cy + y1) / 2;
+              set(cx, cy, color(255));
+              break;
+            case 1:
+              cx = (cx + x2) / 2;
+              cy = (cy + y2) / 2;
+              set(cx, cy, color(255));
+              break;
+            default:
+              cx = (cx + x3) / 2;
+              cy = (cy + y3) / 2;
+              set(cx, cy, color(255));
+          }
+        }
+        updatePixels();
+      }
+
+    </script>
+  </body>
+
+</html>
