@@ -15,7 +15,7 @@ function setup() {
   img_s.loadPixels();
   img_v.loadPixels();
 
-  //Initialize R, G, B images
+  //Initialize H, S, V images
   for (x = 0; x < img.width; x++) {
     for (y = 0; y < img.height; y++) {
       pos = 4 * (y * img.width + x);
@@ -34,7 +34,7 @@ function setup() {
     }
   }
 
-  //Update R, G, B images
+  //Update H, S, V images
   img_v.updatePixels();
 
   //Draw Images
