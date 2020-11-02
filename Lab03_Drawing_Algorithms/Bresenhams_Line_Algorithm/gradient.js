@@ -68,5 +68,5 @@ function draw_line() {
   a = dy / dx;
   b = y0 - a * x0;
 
-	set_pixel(x0, y0, a);
+  set_pixel(x0, y0, a);
 }
