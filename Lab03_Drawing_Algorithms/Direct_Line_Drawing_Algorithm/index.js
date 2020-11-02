@@ -41,20 +41,27 @@ function set_pixel(x, y, c) {
 }
 
 function draw_line() {
-  c = 0;
+  if(x0 > x1) {
+  	t = x0;
+    x0 = x1;
+    x1 = t;
+    
+    t = y0;
+    y0 = y1;
+    y1 = t;   
+  }
+  
   dx = x1 - x0;
   dy = y1 - y0;
 
   a = dy / dx;
   b = y0 - a * x0;
 
-  x = x0 < x1 ? x0 : x1;
-  end = x0 < x1 ? x1 : x0;
-  while (x <= end) {
+  for (x = x0; x <= x1; x++) {
     y = Math.round(a * x + b);
     x = Math.round(x);
 
-    set_pixel(x, y, c);
+    set_pixel(x, y, 0);
     x++;
   }
 }
