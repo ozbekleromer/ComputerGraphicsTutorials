@@ -41,16 +41,16 @@ function set_pixel(x, y, c) {
 }
 
 function draw_line() {
-  if(x0 > x1) {
+  if (x0 > x1) {
     t = x0;
     x0 = x1;
     x1 = t;
-    
+
     t = y0;
     y0 = y1;
-    y1 = t;   
+    y1 = t;
   }
-  
+
   dx = x1 - x0;
   dy = y1 - y0;
 
@@ -62,6 +62,5 @@ function draw_line() {
     x = Math.round(x);
 
     set_pixel(x, y, 0);
-    x++;
   }
 }
