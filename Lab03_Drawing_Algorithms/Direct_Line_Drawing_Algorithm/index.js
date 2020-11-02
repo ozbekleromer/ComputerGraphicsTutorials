@@ -1,7 +1,7 @@
 function setup() {
+  pixelDensity(1);
   createCanvas(512, 512);
   background(255);
-  pixelDensity(1);
 }
 
 var x0 = -1;
@@ -41,27 +41,20 @@ function set_pixel(x, y, c) {
 }
 
 function draw_line() {
-	c = 0;
-	dx = x1 - x0;
-	dy = y1 - y0;
-  
+  c = 0;
+  dx = x1 - x0;
+  dy = y1 - y0;
+
   a = dy / dx;
   b = y0 - a * x0;
-    
-  
-  if (x0 > x1) {
-    for (x = x0; x >= x1; x--) {
-      y = Math.round(a * x + b);
-      x = Math.round(x);
 
-      set_pixel(x, y, c);
-    }
-  } else {
-    for (x = x0; x <= x1; x++) {
-      y = Math.round(a * x + b);
-      x = Math.round(x);
+  x = x0 < x1 ? x0 : x1;
+  end = x0 < x1 ? x1 : x0;
+  while (x <= end) {
+    y = Math.round(a * x + b);
+    x = Math.round(x);
 
-      set_pixel(x, y, c);
-    }
+    set_pixel(x, y, c);
+    x++;
   }
 }
