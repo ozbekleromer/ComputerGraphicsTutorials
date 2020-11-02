@@ -49,10 +49,19 @@ function draw_line() {
   b = y0 - a * x0;
     
   
-  for (x = x0; x < x1; x++) {
-  	y = Math.round(a * x + b);
-  	x = Math.round(x);
-    set_pixel(x, y, c);
+  if (x0 > x1) {
+    for (x = x0; x >= x1; x--) {
+      y = Math.round(a * x + b);
+      x = Math.round(x);
+
+      set_pixel(x, y, c);
+    }
+  } else {
+    for (x = x0; x <= x1; x++) {
+      y = Math.round(a * x + b);
+      x = Math.round(x);
+
+      set_pixel(x, y, c);
+    }
   }
-  
 }
