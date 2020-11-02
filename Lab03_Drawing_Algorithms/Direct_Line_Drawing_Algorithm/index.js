@@ -42,7 +42,7 @@ function set_pixel(x, y, c) {
 
 function draw_line() {
   if(x0 > x1) {
-  	t = x0;
+    t = x0;
     x0 = x1;
     x1 = t;
     
