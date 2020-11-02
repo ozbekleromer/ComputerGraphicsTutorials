@@ -35,7 +35,7 @@ function mouseReleased() {
 function set_pixel(x0, y0, a) {
   for (x = 0; x < 512; x++) {
     for (y = 0; y < 512; y++) {
-			idx = (y * 512 + x) * 4;
+      idx = (y * 512 + x) * 4;
       dxy = a * (x - x0) - (y - y0);
       
       if(dxy < 0) {
