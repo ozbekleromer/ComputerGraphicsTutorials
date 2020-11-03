@@ -33,18 +33,22 @@ function mouseReleased() {
 }
 
 function set_pixel(x0, y0, a) {
+  // for each pixel in the canvas calculate colors
   for (x = 0; x < 512; x++) {
     for (y = 0; y < 512; y++) {
+      //Calculate pixel position in matrix
       idx = (y * 512 + x) * 4;
+      //Calculate distance between pixel and line
       dxy = a * (x - x0) - (y - y0);
 
+      //Above the line give green value 255
       if (dxy < 0) {
         pixels[idx] = 255;
         pixels[idx + 1] = 0;
-      } else if (dxy > 0) {
+      } else if (dxy > 0) { //Under the line give red value 255
         pixels[idx] = 0;
         pixels[idx + 1] = 255;
-      } else {
+      } else { //On the line draw black line
         pixels[idx] = 0;
         pixels[idx + 1] = 0;
       }
@@ -55,6 +59,7 @@ function set_pixel(x0, y0, a) {
 }
 
 function draw_line() {
+  // Make always x0 smaller one
   if (x0 > x1) {
     t = x0;
     x0 = x1;
@@ -65,6 +70,7 @@ function draw_line() {
     y1 = t;
   }
 
+  //Calculate variables
   dx = x1 - x0;
   dy = y1 - y0;
 
