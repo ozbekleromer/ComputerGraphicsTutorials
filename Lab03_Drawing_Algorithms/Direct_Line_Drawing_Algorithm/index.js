@@ -41,6 +41,7 @@ function set_pixel(x, y, c) {
 }
 
 function draw_line() {
+  // Make always x0 smaller one
   if (x0 > x1) {
     t = x0;
     x0 = x1;
@@ -51,15 +52,16 @@ function draw_line() {
     y1 = t;
   }
 
+  //Calculate variables
   dx = x1 - x0;
   dy = y1 - y0;
 
   a = dy / dx;
   b = y0 - a * x0;
 
+  // Calculate y for each x and draw the line
   for (x = x0; x <= x1; x++) {
     y = Math.round(a * x + b);
-    x = Math.round(x);
 
     set_pixel(x, y, 0);
   }
