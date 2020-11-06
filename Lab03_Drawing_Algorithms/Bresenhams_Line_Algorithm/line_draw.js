@@ -41,6 +41,10 @@ function set_pixel(x, y, c) {
 }
 
 function draw_line() {
+  x0 = Math.round(x0);
+  x1 = Math.round(x1);
+  y0 = Math.round(y0);
+  y1 = Math.round(y1);
   // Make always x0 smaller one
   if (x0 > x1) {
     t = x0;
