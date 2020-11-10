@@ -38,6 +38,10 @@ function get_pixel(x, y) {
 
 //fill this function
 function flood_fill(x, y) {
+  x0 = Math.round(x0);
+  x1 = Math.round(x1);
+  y0 = Math.round(y0);
+  y1 = Math.round(y1);
   //  Push the mouse position to stack
   y = floor(y);
   x = floor(x);
