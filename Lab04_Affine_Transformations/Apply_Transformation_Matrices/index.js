@@ -44,11 +44,14 @@ function drawVector(img, vec) {
 }
 
 function mouseDragged() {
-  var vecA = makeVector(mouseX, mouseY);
+  var x = round(mouseX);
+  var y = round(mouseY);
+  var vecA = makeVector(x, y);
   drawVector(imgA, vecA);
   var vecB = multiplication(vecA);
   drawVector(imgB, vecB);
-  
+  console.log(mouseX + " - " + mouseY);
+  console.log(x + " - " + y);
 }
 
 function makeIdentity() {
@@ -123,13 +126,14 @@ function makeShear(shx, shy) {
 }
 
 function multiplication(vec) {
-	var matrix = makeRotation(45);
+  var matrix = makeScaling(3, 3);
   var newVec = [];
-  for(var i=0; i<3; i++) {
-  newVec[i] = 0;
-  	for(var j=0; j<3; j++) {
-  		newVec[i] += matrix[i][j] * vec[j]; 
-  	}
+  for (var i = 0; i < 3; i++) {
+    newVec[i] = 0;
+    for (var j = 0; j < 3; j++) {
+      newVec[i] += matrix[i][j] * vec[j];
+    }
+		newVec[i] = round(newVec[i]);
   }
-	return newVec;
+  return newVec;
 }
