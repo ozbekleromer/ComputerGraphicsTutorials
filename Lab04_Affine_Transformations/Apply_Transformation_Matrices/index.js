@@ -48,10 +48,10 @@ function mouseDragged() {
   var y = round(mouseY);
   var vecA = makeVector(x, y);
   drawVector(imgA, vecA);
-  var vecB = multiplication(vecA);
+  var vecB = multiplication(makeScaling, vecA, 3, 3);
   drawVector(imgB, vecB);
-  console.log(mouseX + " - " + mouseY);
-  console.log(x + " - " + y);
+  console.log(vecA);
+  console.log(vecB);
 }
 
 function makeIdentity() {
@@ -125,15 +125,15 @@ function makeShear(shx, shy) {
   return shearM;
 }
 
-function multiplication(vec) {
-  var matrix = makeScaling(3, 3);
+function multiplication(matrixFunc, vec, ...args) {
+  var matrix = matrixFunc(...args);
   var newVec = [];
   for (var i = 0; i < 3; i++) {
     newVec[i] = 0;
     for (var j = 0; j < 3; j++) {
       newVec[i] += matrix[i][j] * vec[j];
     }
-		newVec[i] = round(newVec[i]);
+    newVec[i] = round(newVec[i]);
   }
   return newVec;
 }
