@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> body { background-color:#ccc; } </style>
+    <title>Title of the document</title>
+  </head>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
+
+<body>
+  <form id="myForm" onreset="reset();">
+    <label for="operation1">Operation 1:</label>
+
+    <select name="operation1" id="operation1">
+      <option value="identity">Identity</option>
+      <option value="rotate">Rotate</option>
+      <option value="transform">Transform</option>
+      <option value="scale">Scale</option>
+      <option value="shear">Shear</option>
+    </select>
+
+    <label for="operation2">Operation 2:</label>
+
+    <select name="operation2" id="operation2">
+      <option value="identity">Identity</option>
+      <option value="rotate">Rotate</option>
+      <option value="transform">Transform</option>
+      <option value="scale">Scale</option>
+      <option value="shear">Shear</option>
+    </select>
+
+    <label for="operation3">Operation 3:</label>
+
+    <select name="operation3" id="operation3">
+      <option value="identity">Identity</option>
+      <option value="rotate">Rotate</option>
+      <option value="transform">Transform</option>
+      <option value="scale">Scale</option>
+      <option value="shear">Shear</option>
+    </select>
+    <br>
+
+    <label for="op1var1">Oper.1 - Var1:</label>
+    <input type="number" id="op1var1" name="op1var1" value=0><br>
+    <label for="op1var2">Oper.1 - Var2:</label>
+    <input type="number" id="op1var2" name="op1var2" value=0><br>
+    <label for="op2var1">Oper.2 - Var1:</label>
+    <input type="number" id="op2var1" name="op2var1" value=0><br>
+    <label for="op2var2">Oper.2 - Var2:</label>
+    <input type="number" id="op2var2" name="op2var2" value=0><br>
+    <label for="op3var1">Oper.3 - Var1:</label>
+    <input type="number" id="op3var1" name="op3var1" value=0><br>
+    <label for="op3var2">Oper.3 - Var2:</label>
+    <input type="number" id="op3var2" name="op3var2" value=0><br>
+
+    <input type="button" onclick="change()" value="Submit">
+    <input type="reset" onclick="resetAll()" value="Reset">
+
+  </form>
+
+
+  <br>
+  <script type="text/javascript">
+
+  </script>
+</body>
+
+</html>
