@@ -36,6 +36,13 @@ function setup() {
   operation1 = makeIdentity;
   operation2 = makeIdentity;
   operation3 = makeIdentity;
+
+  op1var1 = 0;
+  op1var2 = 0;
+  op2var1 = 0;
+  op2var2 = 0;
+  op3var1 = 0;
+  op3var2 = 0;
 }
 
 function draw() {
@@ -64,9 +71,6 @@ function mouseDragged() {
   var vecA = makeVector(x, y);
   drawVector(imgA, vecA);
   var vecB = serialTransformation(vecA, operation1(op1var1, op1var2), operation2(op2var1, op2var2), operation3(op3var1, op3var2));
-  //var vecB = serialTransformation(vecA, makeScaling(3, 3), makeTranslation(50, 50), makeRotation(30));
-  //var vecB = serialTransformation(vecA, makeTranslation(50, 50), makeIdentity(), makeIdentity());
-  //var vecB = serialTransformation(vecA, makeIdentity(), makeIdentity(), makeIdentity());
   drawVector(imgB, vecB);
 }
 
@@ -177,17 +181,15 @@ function serialTransformation(vec, ...args) {
 
 function change() {
   operation1 = assignFuntion(document.getElementById("operation1").value);
-  operation2 = assignFuntion(document.getElementById("operation1").value);
-  operation3 = assignFuntion(document.getElementById("operation1").value);
+  operation2 = assignFuntion(document.getElementById("operation2").value);
+  operation3 = assignFuntion(document.getElementById("operation3").value);
 
-  op1var1 = document.getElementById("op1val1").value;
-  op1var2 = document.getElementById("op1val2").value;
-  op2var1 = document.getElementById("op2val1").value;
-  op2var2 = document.getElementById("op2val2").value;
-  op3var1 = document.getElementById("op3val1").value;
-  op3var2 = document.getElementById("op3val2").value;
-
-  if (nameValue == "rotate") alert("Rotate");
+  op1var1 = document.getElementById("op1var1").value;
+  op1var2 = document.getElementById("op1var2").value;
+  op2var1 = document.getElementById("op2var1").value;
+  op2var2 = document.getElementById("op2var2").value;
+  op3var1 = document.getElementById("op3var1").value;
+  op3var2 = document.getElementById("op3var2").value;
 }
 
 function assignFuntion(functionName) {
